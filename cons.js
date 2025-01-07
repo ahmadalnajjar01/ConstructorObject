@@ -1,24 +1,21 @@
 // Q1: Car Class
-class Car {
-  constructor(brand, model, year) {
-    this.brand = brand;
-    this.model = model;
-    this.year = year;
-  }
 
-  getDetails() {
+function Car(brand, model, year) {
+  this.brand = brand;
+  this.model = model;
+  this.year = year;
+
+  this.getDetails = function () {
     return `Brand: ${this.brand}, Model: ${this.model}, Year: ${this.year}`;
-  }
+  };
 }
-
 const car1 = new Car("Toyota", "Camry", 2020);
 const car2 = new Car("Ford", "Focus", 2021);
 const car3 = new Car("Mazda", "CX-5", 2022);
 
-const cars = [car1, car2, car3];
-for (const car of cars) {
-  console.log(car.getDetails());
-}
+console.log(car1.getDetails());
+console.log(car2.getDetails());
+console.log(car3.getDetails());
 
 // Q2: Get First Names with for...of
 const persons = [
@@ -41,7 +38,7 @@ console.log(firstName(persons));
 
 // Q3: Convert Object to Array with Object.keys() and Object.values()
 function objectToArray(obj) {
-  return [...Object.keys(obj), ...Object.values(obj)];
+  return [Object.keys(obj), Object.values(obj)];
 }
 
 const exampleObject = { firstName: "Moh", age: 24 };
